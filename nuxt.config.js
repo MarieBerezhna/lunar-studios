@@ -34,7 +34,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],
   axios: {
-    baseURL: process.env.BASE_URL, // Used as fallback if no runtime config is provided
+    baseURL: 'https://lunar-studios.vercel.app', // Used as fallback if no runtime config is provided
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
