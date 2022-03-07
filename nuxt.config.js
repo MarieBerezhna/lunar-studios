@@ -40,6 +40,6 @@ export default {
   },
   serverMiddleware: [
           // { path: '/api', handler: '~/api/index' },
-          { path: '/api/hello', handler: '~api/hello' }
+          { path: '/api/', handler: '~api/index' }
         ],
 }
