@@ -9,10 +9,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/vercel-builder": "^0.22.1",
     "@vercel/node": "^1.13.0",
+    "axios": "^0.26.0",
+    "consola": "^2.15.3",
     "core-js": "^3.19.3",
     "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-server-renderer": "^2.6.14",
