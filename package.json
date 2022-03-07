@@ -22,5 +22,7 @@
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.70.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxt/core": "^2.15.8"
+  }
 }
