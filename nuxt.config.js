@@ -39,8 +39,6 @@ export default {
   // build: {
   // },
   serverMiddleware: [
-          // { path: '/api', handler: '~/api/index' },
-          { path: '/api/check', handler: '~api/index' },
-          { path: '/api/', handler: '~api/index' }
+          { path: '/api', handler: '~/api/index' },
         ],
 }
