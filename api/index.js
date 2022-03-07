@@ -15,8 +15,8 @@ app.post('/api', (req, res) => {
 })
 app.post('/upload', (req, res) => {
   const file = req.files.file
-  const targetPath = path.join(__dirname, `../assets/${file.name}`)
-  console.log(file, targetPath)
+  const targetPath = path.join(__dirname, `../static/assets/${file.name}`)
+  console.log(file)
   file.mv(targetPath, function(err) {
     if (err) {
       return res.status(500).send(err);
