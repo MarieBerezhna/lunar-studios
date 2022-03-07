@@ -1,7 +1,7 @@
 <template>
     <div>
         <input @change="upload($event)" name="file" type="file" />
-        <img v-if="src.length" :src="src" width="500" height="800" alt="uploaded">
+        <img v-if="src.length" :src="src" alt="uploaded">
     </div>
 </template>
 
