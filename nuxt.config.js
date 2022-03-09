@@ -38,7 +38,20 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+    ],
+  auth: {
+  strategies: {
+    google: {
+      clientId: '485140192524-do6q96dt97s5dtg94khielfpj9q6hdlk.apps.googleusercontent.com',
+      scope: ['profile', 'email'],
+      codeChallengeMethod: '',
+      responseType: 'token id_token'
+    },
+  }
+  },
   axios: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000', // Used as fallback if no runtime config is provided
   },
