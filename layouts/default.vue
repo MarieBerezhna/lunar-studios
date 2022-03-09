@@ -1,6 +1,8 @@
 <template>
     <div>
-        <Dashboard />
+        <TopNav />
+        Layout works
+        <Nuxt />
     </div>
 </template>
 
