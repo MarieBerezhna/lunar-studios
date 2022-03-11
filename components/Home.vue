@@ -1,12 +1,15 @@
 <!-- Please remove this file from your project -->
 <template>
   <div class="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
-    <FileUpload />
+    {{ sections }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  computed: {
+    sections () { return this.$store.state.sections }
+  }
 }
 </script>

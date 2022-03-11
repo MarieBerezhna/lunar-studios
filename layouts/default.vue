@@ -1,14 +1,15 @@
 <template>
     <div>
         <TopNav />
-        Layout works
         <Nuxt />
     </div>
 </template>
 
 <script>
     export default {
-        
+        mounted () {
+            this.$store.dispatch('get_content')
+        }
     }
 </script>
 

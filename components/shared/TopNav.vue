@@ -16,9 +16,6 @@
         computed: {
             loggedIn () { return this.$auth.loggedIn },
             user () { return this.$auth.user }
-        },
-        mounted () {
-            console.log(this.user)
         }
     }
 </script>

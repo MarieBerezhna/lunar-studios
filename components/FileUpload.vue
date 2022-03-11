@@ -18,10 +18,8 @@
                 if (!file) return;
                 const formData = new FormData()
                 formData.append('file', file)
-                console.log(this.$axios)
                 const res = await this.$axios.post('/upload', formData)
                 this.src = `/assets/${res.data}`
-                console.log(res)
             }
         }
     }

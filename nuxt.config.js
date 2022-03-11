@@ -1,5 +1,4 @@
 require('dotenv').config()
-console.log(process.env)
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
