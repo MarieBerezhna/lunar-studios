@@ -10,10 +10,11 @@
     export default {
         methods: {
             login () {
-                this.$auth.loginWith('google').then(res => {
-                    console.log(res)
-                })
+                this.$auth.loginWith('google')
             }
+        },
+        mounted () {
+            console.log(this.$auth)
         }
     }
 </script>

@@ -6,13 +6,20 @@
             <li>Works</li>
             <li>Collaborations</li>
             <li>Contact</li>
+            <li></li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        
+        computed: {
+            loggedIn () { return this.$auth.loggedIn },
+            user () { return this.$auth.user }
+        },
+        mounted () {
+            console.log(this.user)
+        }
     }
 </script>
 

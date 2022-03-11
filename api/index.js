@@ -7,12 +7,7 @@ app.use(bodyParser.json())
 app.use(fileUpload({
   limits: { fileSize: 50 * 1024 * 1024 },
 }))
-app.get('/api', (req, res) => {
-  res.status(200).json('test - get').end()
-})
-app.post('/api', (req, res) => {
-  res.status(200).json('test - post').end()
-})
+
 app.post('/upload', (req, res) => {
   const file = req.files.file
   const targetPath = path.join(__dirname, `../static/assets/${file.name}`)

@@ -1,3 +1,5 @@
+require('dotenv').config()
+console.log(process.env)
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,10 +47,10 @@ export default {
   auth: {
   strategies: {
     google: {
-      clientId: '485140192524-do6q96dt97s5dtg94khielfpj9q6hdlk.apps.googleusercontent.com',
+      clientId: process.env.GOOGLE_AUTH_CLIENTID,
       scope: ['profile', 'email'],
       codeChallengeMethod: '',
-      responseType: 'token id_token'
+      responseType: 'code'
     },
   }
   },
