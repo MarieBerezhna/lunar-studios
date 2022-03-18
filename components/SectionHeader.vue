@@ -24,18 +24,29 @@
 
 <style scoped>
 .heading {
-    padding-top: 20px;
-    padding-left: 12%;
+    width: 100%;
+    padding: 20px 12%;
+}
+#projects .heading {
+    text-align: right;
+}
+#contact .heading {
+    text-align: center;
 }
 #collaborators span {
     display: inline-block;
     white-space: nowrap;
-    margin-right: -12px;
+    margin-right: -7px;
 }
 span:first-child {
     text-transform: capitalize;
 }
 span:last-child {
     color: #faaf40
+}
+@media screen and (min-width: 768px) {
+#collaborators span {
+    margin-right: -12px;
+}
 }
 </style>

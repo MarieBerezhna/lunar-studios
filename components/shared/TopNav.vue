@@ -46,6 +46,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 100000;
 }
 
 .nav-item {
@@ -58,9 +59,13 @@
     width: 38.5px;
     height: 50px;
 }
+.navbar-toggler {
+    position: absolute;
+    right: 5px;
+}
 @media screen and (min-width: 768px) {
     .navbar-nav {
-        margin-left: auto;
+        margin-left: 65%;
     }
     .navbar-brand img {
         margin-top: 35px;
