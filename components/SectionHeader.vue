@@ -26,6 +26,7 @@
 .heading {
     width: 100%;
     padding: 20px 12%;
+    padding-top: 60px;
 }
 #home .heading {
     display: none;
@@ -48,8 +49,8 @@ span:last-child {
     color: #faaf40
 }
 @media screen and (min-width: 768px) {
-#collaborators span {
-    margin-right: -12px;
-}
+    #collaborators span {
+        margin-right: -12px;
+    }
 }
 </style>

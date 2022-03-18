@@ -9,9 +9,10 @@
 
     <b-collapse id="nav-collapse" is-nav right>
       <b-navbar-nav>
-        <b-nav-item v-for="link in links" :key="link" :href="link !== 'home' ? `#${link}` : '/'">
+        <NuxtLink class="nav-link" @click="scroll($event)" 
+        v-for="link in links" :key="link" :to="link !== 'home' ? `#${link}` : '#'">
             {{ link }}
-        </b-nav-item>
+         </NuxtLink>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -36,6 +37,11 @@
             user () { return this.$auth.user },
             links () { return this.$store.state.content.map(i => i.data && i.data.heading ? i.data.heading : i.name) }
         },
+        methods: {
+            scroll (e) {
+                console.log(e.target)
+            }
+        }
     }
 </script>
 
@@ -49,7 +55,7 @@
     z-index: 100000;
 }
 
-.nav-item {
+.nav-link {
     text-transform: capitalize;
     background: rgba(255, 255, 255, 0.85);
     text-align: center;
