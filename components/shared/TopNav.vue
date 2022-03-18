@@ -1,15 +1,17 @@
 <template>
     <div>
-  <b-navbar toggleable="lg" type="light" variant="white">
-    <b-navbar-brand href="/">
+  <b-navbar class="nav" toggleable="lg" type="light" variant="white">
+    <NuxtLink class="navbar-brand" to="/">
         <img width="77" height="100" :src="require('../../static/assets/logo.png')" alt="">
-    </b-navbar-brand>
+    </NuxtLink>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav right>
       <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
+        <b-nav-item v-for="link in links" :key="link" :href="link !== 'home' ? `#${link}` : '/'">
+            {{ link }}
+        </b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -31,18 +33,39 @@
     export default {
         computed: {
             loggedIn () { return this.$auth.loggedIn },
-            user () { return this.$auth.user }
-        }
+            user () { return this.$auth.user },
+            links () { return this.$store.state.content.map(i => i.data && i.data.heading ? i.data.heading : i.name) }
+        },
     }
 </script>
 
 <style scoped>
-ul {
-    list-style: none;
-    display: flex;
-    float: right;
+.nav {
+    position: fixed;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
 }
- ul li {
-     margin-right: 20px;
- }
+
+.nav-item {
+    text-transform: capitalize;
+    background: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-weight: bold;
+}
+.navbar-brand img, .navbar-brand a {
+    width: 38.5px;
+    height: 50px;
+}
+@media screen and (min-width: 768px) {
+    .navbar-nav {
+        margin-left: auto;
+    }
+    .navbar-brand img {
+        margin-top: 35px;
+        width: 77px;
+        height: 100px;
+    }
+}
 </style>
