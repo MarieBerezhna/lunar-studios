@@ -7,6 +7,10 @@ const filename = 'data/lunar.xlsx';
 const workbook = new Excel.Workbook();
 const path = require("path")
 const app = express()
+const cors = require('cors')
+app.use(cors({
+    origin: process.env.BASE_URL || 'http://localhost:3000'
+}))
 app.use(bodyParser.json())
 app.use(fileUpload({
   limits: { fileSize: 50 * 1024 * 1024 },
