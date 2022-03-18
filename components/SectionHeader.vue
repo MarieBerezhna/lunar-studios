@@ -27,6 +27,9 @@
     width: 100%;
     padding: 20px 12%;
 }
+#home .heading {
+    display: none;
+}
 #projects .heading {
     text-align: right;
 }

@@ -13,6 +13,8 @@
     }
 </script>
 
-<style scoped>
-
+<style >
+.text-orange {
+    color: #faaf40
+}
 </style>

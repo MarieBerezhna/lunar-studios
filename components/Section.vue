@@ -12,8 +12,10 @@
                 class="col-12 col-lg-4" />
             </div>
         </div>
-        <div v-if="section.name === 'collaborators'" class="container">
-            Collab
+        <div v-if="section.name === 'collaborators'" class="container position-relative">
+            <Artist v-for="(artist, index) in section.data" 
+            :key="index" :artist="artist" :index="index" 
+             />
         </div>
     </div>
 </template>
@@ -45,14 +47,11 @@
   background-repeat: no-repeat;
   margin-bottom: 50px;
 }
-
 #home {
-    background-size: 90%;
-    background-position: right;
+    margin-top: 60px;
+    height: 40vh;
 }
-#about {
-    padding-bottom: 400px;
-}
+
 #about p {
     text-align: center;
     padding: 10%;
@@ -65,11 +64,12 @@
     #about .offset-lg-6 {
         margin-top: unset
     }
-    #home, #about {
+    #home, #about, #contact {
         height: 100vh;
     }
-    /* #about {
-        height: 130vh;
-    } */
+    #home, #contact {
+        background-size: 90%;
+        background-position: right;
+    }
 }
 </style>
