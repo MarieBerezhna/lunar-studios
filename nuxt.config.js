@@ -1,8 +1,9 @@
 require('dotenv').config()
+console.log(process.env.GOOGLE_AUTH_CLIENTID)
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'LunarStudio',
+    title: 'Lunar Studios',
     htmlAttrs: {
       lang: 'en'
     },

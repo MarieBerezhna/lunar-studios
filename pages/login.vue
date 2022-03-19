@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <div>
-            <button @click="login">Login</button>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-10 col-lg-6 mx-auto text0center">
+                <button class="btn btn-dark" @click="login">Login</button>
+            </div>
         </div>
     </div>
 </template>
@@ -19,6 +21,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
