@@ -1,10 +1,11 @@
 <template>
     <div class="row pb-3 artist">
         <div class="col-12 col-lg-4" :class="{ 'order-lg-2 odd': odd }">
-            <img :src="require(`@/static/collaborators/${img}`)" :alt="artist.name" :title="artist.name">
+            <img :src="require(`@/static/collaborators/${img}`)" 
+            :alt="artist.name" :title="artist.name" class="my-shadow">
         </div>
         <div class="col-12 col-lg-6 py-lg-5" :class="{ 'order-lg-1 offset-lg-2 odd': odd }">
-            <h2 class="text-center">
+            <h2 class="px-lg-4">
                 <span> {{firstName }}</span>
                 <span class="text-orange" v-if="lastName" > {{ lastName }}</span>
             </h2>
