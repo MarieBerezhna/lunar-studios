@@ -11,7 +11,7 @@
     <b-collapse id="nav-collapse" is-nav right>
       <b-navbar-nav>
           <li class="nav-item" v-for="link in links" :key="link">
-            <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link}` : '#'">
+            <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link.split(' ')[0].toLowerCase()}` : '#'">
             {{ link }}
             </NuxtLink>
           </li>

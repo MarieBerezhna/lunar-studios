@@ -16,6 +16,9 @@
             :key="index" :artist="artist" :index="index" 
              />
         </div>
+        <div class="container" v-if="section.name === 'contact'">
+            <ContactForm />
+        </div>
     </div>
 </template>
 

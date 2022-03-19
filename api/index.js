@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import fileUpload from 'express-fileupload'
+import sendMail from './mail'
 const Excel = require('exceljs')
 const excelToJson = require('convert-excel-to-json')
 const filename = 'data/lunar.xlsx';
@@ -51,5 +52,10 @@ app.post('/upload', (req, res) => {
     }
     res.send(file.name);
   })
+})
+
+app.post('/contact', async (req, res) => {
+  const { email, name, message } = req.body
+  sendMail('webmarie2019@gmail.com', email, `Message from ${name} via Lunar Studios contact form`, message, res)
 })
 export default app
