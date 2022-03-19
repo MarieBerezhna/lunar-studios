@@ -56,6 +56,6 @@ app.post('/upload', (req, res) => {
 
 app.post('/contact', async (req, res) => {
   const { email, name, message } = req.body
-  sendMail('webmarie2019@gmail.com', email, `Message from ${name} via Lunar Studios contact form`, message, res)
+  sendMail(process.env.ADMIN, email, `Message from ${name} via Lunar Studios contact form`, message, res)
 })
 export default app
