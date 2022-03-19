@@ -2,8 +2,7 @@
     <div :id="section.name" class="section" :style="content.background ? { backgroundImage: `url(${require('@/static/assets/backgrounds/' + section.name + '.png')})` } : {}">
         <SectionHeader :heading="content.heading ? content.heading : section.name" />
         <div class="text col-12 col-lg-5" :class="{'offset-lg-6': section.name === 'about'}">
-            <p v-html="paragraphs">
-            </p>
+            <TextBlock :text="content.textblock" />
         </div>
         <div v-if="section.name === 'projects'" class="container py-3">
             <div class="row">
@@ -27,15 +26,6 @@
         },
         computed : {
             content () { return this.section.data[0] ? this.section.data[0] : null},
-            paragraphs () {
-                let html = ''
-                if (this.content.textblock) {
-                    this.content.textblock.split('/n').map(p => {
-                        html += `<p>${p}</p>`
-                    })
-                }
-                return html
-            }
         }
     }
 </script>
