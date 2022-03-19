@@ -1,10 +1,11 @@
 <template>
   <div class="col-12 col-lg-6 wrapper border-bottom  border-lg-top border-start px-3 py-5 p-lg-5 mt-5 mt-lg-0">
     <div v-if="result" class="answer" :class="{'text-danger': result.error, 'text-success': !result.error}">
-      <p v-if="result.error">Unfortunately, we couldn't deliver the message. Please, contact us directly via
+      <p v-if="result.error">Unfortunately, we couldn't deliver the message. <br>
+        Please, contact us directly via
         <a href="mailto:franklunar@gmail.com">email</a>.
       </p>
-      <p v-if="!result.error">Thank you! The message was successfully delivered. We'll get back to you soon!</p>
+      <p v-if="!result.error">Thank you! The message was successfully delivered. <br>We'll get back to you soon!</p>
     </div>
     <b-form @submit="onSubmit">
       <b-form-group
@@ -61,6 +62,9 @@
       onSubmit(event) {
         event.preventDefault()
         this.$store.dispatch('contact', this.form)
+        this.form.email = ''
+        this.form.name = ''
+        this.form.message = ''
       }
     }
   }
