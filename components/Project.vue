@@ -1,6 +1,6 @@
 <template>
     <div class="text-center p-3" >
-        <div class="card border-0">
+        <div class="card my-shadow shadow-hover border-0">
         <img class="d-block mx-auto w-75" width="auto" height="auto" :src="require(`@/static/projects/${filename}`)" alt="">
         {{ project.name }}
         </div>
@@ -27,14 +27,5 @@
 }
 .card {
     padding-bottom: 40px;
-    cursor: pointer;
-    box-shadow: 1px 3px 19px 4px rgba(0,0,0,0.49);
-    -webkit-box-shadow: 1px 3px 19px 4px rgba(0,0,0,0.49);
-    -moz-box-shadow: 1px 3px 19px 4px rgba(0,0,0,0.49);
-}
-.card:hover {
-    box-shadow: 1px 3px 19px 0px rgba(0,0,0,0.49);
-    -webkit-box-shadow: 1px 3px 19px 0px rgba(0,0,0,0.49);
-    -moz-box-shadow: 1px 3px 19px 0px rgba(0,0,0,0.49);
 }
 </style>
