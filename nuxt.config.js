@@ -55,7 +55,7 @@ export default {
         clientId: process.env.GOOGLE_AUTH_CLIENTID,
         codeChallengeMethod: '',
         responseType: 'token id_token',
-        redirect_uris: ['http://localhost:3000/admin']
+        redirect_uris: ['http://localhost:3000/admin', 'https://lunar-studios.herokuapp.com/admin']
       },
     }
   },
