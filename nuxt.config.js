@@ -1,5 +1,4 @@
 require('dotenv').config()
-console.log(process.env.GOOGLE_AUTH_CLIENTID)
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,14 +44,20 @@ export default {
     '@nuxtjs/auth-next'
     ],
   auth: {
-  strategies: {
-    google: {
-      clientId: process.env.GOOGLE_AUTH_CLIENTID,
-      scope: ['profile', 'email'],
-      codeChallengeMethod: '',
-      responseType: 'code'
+    redirect: {
+      login: '/admin',
+      logout: '/',
+      callback: '/admin',
+      home: '/'
     },
-  }
+    strategies: {
+      google: {
+        clientId: process.env.GOOGLE_AUTH_CLIENTID,
+        codeChallengeMethod: '',
+        responseType: 'token id_token',
+        redirect_uris: ['http://localhost:3000/admin']
+      },
+    }
   },
   axios: {
     baseURL: process.env.BASE_URL || 'http://localhost:3000', // Used as fallback if no runtime config is provided
