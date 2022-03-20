@@ -4,7 +4,7 @@
             <div v-if="!user" class="col-10 col-lg-6 mx-auto text-center">
                 <button class="btn btn-dark my-5" @click="login">Login</button>
             </div>
-            <div v-else class="col-10 col-lg-6 mx-auto text-center">
+            <div v-else class="mt-5 col-10 col-lg-6 mx-auto text-center">
                 logged in {{ user }}
             </div>
         </div>
@@ -22,7 +22,7 @@
             user () { return this.$auth.user }
         },
         mounted () {
-            console.log(this.user)
+            console.log(this.user, process.env.ADMIN)
         }
     }
 </script>

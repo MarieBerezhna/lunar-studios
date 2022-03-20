@@ -9,24 +9,31 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav right>
-      <b-navbar-nav>
+      <b-navbar-nav v-if="!user">
           <li class="nav-item" v-for="link in links" :key="link">
-            <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link.split(' ')[0].toLowerCase()}` : '#'">
+            <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link.split(' ')[0].toLowerCase()}` : '/'">
             {{ link }}
             </NuxtLink>
           </li>
 
       </b-navbar-nav>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <!-- <b-nav-item-dropdown right>
-          <template #button-content>
-            <em>User</em>
-          </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown> -->
+      <b-navbar-nav v-else>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/">
+              Home
+            </NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/admin">
+              Dashboard
+            </NuxtLink>
+          </li>
+          <li class="nav-item float-right">
+            <NuxtLink class="nav-link text-success" style="cursor: unset" to="/admin">
+                {{ user.name }}
+                <img class="avatar" :src="user.picture" alt="">
+            </NuxtLink>
+          </li>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -66,6 +73,13 @@
 .navbar-toggler {
     position: absolute;
     right: 5px;
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-top: -5px;
+  margin-left: 10px;
 }
 @media screen and (min-width: 768px) {
     .navbar-nav {
