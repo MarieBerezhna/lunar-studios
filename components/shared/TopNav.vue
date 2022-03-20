@@ -9,29 +9,32 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav right>
-      <b-navbar-nav v-if="!user">
+      <b-navbar-nav v-if="!user && this.route !== 'admin'">
           <li class="nav-item" v-for="link in links" :key="link">
             <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link.split(' ')[0].toLowerCase()}` : '/'">
             {{ link }}
             </NuxtLink>
           </li>
-
+          <li class="nav-item" v-if="user">
+            <NuxtLink class="nav-link" to="/admin">
+              Admin
+            </NuxtLink>
+          </li>
       </b-navbar-nav>
-      <b-navbar-nav v-else>
+      <b-navbar-nav v-else-if="user && this.route === 'admin'">
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/">
               Home
             </NuxtLink>
           </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link" to="/admin">
-              Dashboard
-            </NuxtLink>
-          </li>
           <li class="nav-item float-right">
-            <NuxtLink class="nav-link text-success" style="cursor: unset" to="/admin">
-                {{ user.name }}
-                <img class="avatar" :src="user.picture" alt="">
+            <NuxtLink class="nav-link text" style="cursor: unset" to="/admin">
+                <span class="text-success">{{ user.name }}</span>
+                <img class="avatar d-inline-block mx-3" :src="user.picture" alt="">
+               <font-awesome-icon @click="logout"
+               style="cursor: pointer" 
+               title="log out"
+               class="d-inline-block ml-3" :icon="faArrowRightFromBracket"/>
             </NuxtLink>
           </li>
       </b-navbar-nav>
@@ -41,12 +44,26 @@
 </template>
 
 <script>
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
     export default {
         computed: {
+            // fas () {
+            //    return fas // NOT RECOMMENDED
+            // },
+            route () { return this.$route.name },
             loggedIn () { return this.$auth.loggedIn },
             user () { return this.$auth.user },
             links () { return this.$store.state.content.map(i => i.data && i.data[0].heading ? i.data[0].heading : i.name) }
         },
+        methods: {
+          logout() {
+            this.$auth.logout()
+          }
+        },
+        mounted () {
+          console.log(faArrowRightFromBracket)
+        }
     }
 </script>
 
