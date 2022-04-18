@@ -18,6 +18,15 @@
         </div>
         <div class="container" v-if="section.name === 'contact'">
             <ContactForm />
+            <p class="mt-5 px-3">
+                Based in Cape Town, South Africa
+            </p>
+            <p class="px-3">
+                Phone number: + 27 79 342 7269
+            </p>
+            <p class="px-3">
+                Email: <a href="mailto:franklunar@gmail.com">franklunar@gmail.com</a>
+            </p>
         </div>
     </div>
 </template>
