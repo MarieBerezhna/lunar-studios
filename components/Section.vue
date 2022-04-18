@@ -27,6 +27,15 @@
             <p class="px-3">
                 Email: <a href="mailto:franklunar@gmail.com">franklunar@gmail.com</a>
             </p>
+            <p class="col-12 col-lg-6">
+                <a href="https://www.facebook.com/franklunar7" target="_blank" class="mx-2">
+                    <b-icon icon="facebook" width=2em height=2em variant="dark"></b-icon>
+                </a>
+                <a href="https://www.linkedin.com/in/frank-lunar-1870/" target="_blank" class="mx-2">
+                    <b-icon icon="linkedin" width=2em height=2em variant="dark"></b-icon>
+                </a>
+            </p>
+            
         </div>
     </div>
 </template>
