@@ -29,7 +29,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/bootstrap.js'
+    '~/plugins/bootstrap.js',
+    { src: '~/plugins/axios.js', ssr: true },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -55,7 +56,7 @@ export default {
       login: '/admin',
       logout: '/',
       callback: '/admin',
-      home: '/'
+      home: '/admin'
     },
     strategies: {
       google: {

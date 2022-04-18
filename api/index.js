@@ -5,7 +5,7 @@ import sendMail from './mail'
 const Excel = require('exceljs')
 const excelToJson = require('convert-excel-to-json')
 const filename = 'data/lunar.xlsx';
-const workbook = new Excel.Workbook();
+const workbook = new Excel.Workbook()
 const path = require("path")
 const app = express()
 const cors = require('cors')
@@ -17,6 +17,16 @@ app.use(fileUpload({
   limits: { fileSize: 50 * 1024 * 1024 },
 }))
 
+const checkAdmin = (req, res) => {
+  const { email } = req.query
+  return email === process.env.ADMIN
+}
+
+app.get('/check', (req, res) => {
+  const admin = checkAdmin(req)
+  console.log(admin)
+  res.send({admin})
+})
 app.get('/content', async (req, res) => {
   const file = await workbook.xlsx.readFile(filename)
   const sheets = file._worksheets.filter(w => w.name.indexOf('section') !== -1).map(s => s.name)

@@ -9,7 +9,7 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav right>
-      <b-navbar-nav v-if="!user && this.route !== 'admin'">
+      <b-navbar-nav v-if="this.route !== 'admin'">
           <li class="nav-item" v-for="link in links" :key="link">
             <NuxtLink class="nav-link"  :to="link !== 'home' ? `#${link.split(' ')[0].toLowerCase()}` : '/'">
             {{ link }}
@@ -51,6 +51,7 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
             // fas () {
             //    return fas // NOT RECOMMENDED
             // },
+            faArrowRightFromBracket () { return faArrowRightFromBracket },
             route () { return this.$route.name },
             loggedIn () { return this.$auth.loggedIn },
             user () { return this.$auth.user },
@@ -60,9 +61,6 @@ import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
           logout() {
             this.$auth.logout()
           }
-        },
-        mounted () {
-          console.log(faArrowRightFromBracket)
         }
     }
 </script>

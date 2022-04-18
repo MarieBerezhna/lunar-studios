@@ -13,6 +13,10 @@ export const mutations = {
     },
     contact_answer(state, answer) {
          state.contactFormResult = answer
+    },
+    set_admin(state, admin) {
+        Object.assign(state.auth.user, admin)
+        console.log(state.auth.user)
     }
 }
 export const actions = {
