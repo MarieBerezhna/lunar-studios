@@ -10,7 +10,7 @@ const path = require("path")
 const app = express()
 const cors = require('cors')
 app.use(cors({
-    origin: process.env.BASE_URL || 'http://localhost:3000'
+    origin: 'http://lunarstudios.webmarie.com' || 'http://localhost:3000'
 }))
 app.use(bodyParser.json())
 app.use(fileUpload({
