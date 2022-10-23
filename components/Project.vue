@@ -1,7 +1,7 @@
 <template>
     <div class="text-center p-3" >
         <div class="card my-shadow shadow-hover border-0">
-        <img class="d-block mx-auto w-75" width="auto" height="auto" :src="require(`@/static/projects/${filename}`)" alt="">
+        <img class="d-block mx-auto" width="auto" height="auto" :src="require(`@/static/projects/${filename}`)" alt="">
         {{ project.name }}
         </div>
     </div>

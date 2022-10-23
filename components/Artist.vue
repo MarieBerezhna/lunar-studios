@@ -6,7 +6,7 @@
         </div>
         <div class="col-12 col-lg-6 py-lg-5" :class="{ 'order-lg-1 offset-lg-2 odd': odd }">
             <h2 class="px-lg-4 mt-3">
-                <span> {{firstName }}</span>
+                <span> {{ firstName }}</span>
                 <span class="text-orange" v-if="lastName" > {{ lastName }}</span>
             </h2>
 
